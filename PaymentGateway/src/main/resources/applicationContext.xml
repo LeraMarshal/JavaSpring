@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="order" class="de.marshal.javaspring.payment.gateway.Order">
+        <property name="item" value="Order-1"/>
+        <property name="price" value="100"/>
+    </bean>
+
+    <bean id="paymentGateway" class="de.marshal.javaspring.payment.gateway.PaymentGateway">
+        <property name="order" ref="order"/>
+        <!-- ref используется для ссылки на другой бин, созданный ранее, чтобы связать два бина между собой -->
+    </bean>
+
+</beans>
